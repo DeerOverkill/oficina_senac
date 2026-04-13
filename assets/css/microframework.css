@@ -85,7 +85,7 @@ header{
   background-image: url(../imagens/imagem_hero/ge.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: top;
+  background-position: center;
   background-color: #0f172a;
   color: var(--bem-light);
 }
@@ -109,9 +109,9 @@ header{
 .bem-hero__image{
   position: absolute;
   bottom: 0;
-  right: -10%;
+  right: 7%;
   z-index: 2;
-  transform: scale(2) translate( 5px, -10px);
+  transform: scale(2) translate( -20px, -30px);
 }
 .bem-container{
   width:100%;
