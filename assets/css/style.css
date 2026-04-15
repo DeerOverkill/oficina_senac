@@ -1,7 +1,7 @@
 :root {
   /* --- Colors --- */
   --color-primary: #1a1a1b;     /* Carbon Grey (60%) */
-  --color-secondary: #7c7272;   /* Pure White (30%) */
+  --color-secondary: #e7e7e7;   /* Pure White (30%) */
   --color-tertiary: #ff7700;    /* Power Gold (10%) */
   /* Variations for depth */
   --color-primary-light: #545461;
@@ -9,9 +9,9 @@
   /* Semantic Colors */
   --color-success: #27ae60;
   --color-danger: #793737;
-  --color-text-main: #ffffff;
+  --color-text-main: #352d2d;
   --color-text-inverted: #1a1a1b;
-  --color-gray-muted: #828282;
+  --color-gray-muted: #d8c7c7;
   /* --- Typography --- */
   --font-main: 'Inter', system-ui, -apple-system, sans-serif;
   --font-heading: 'Oswald', sans-serif;
