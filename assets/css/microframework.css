@@ -123,9 +123,9 @@ header{
   display: flex;
   bottom: 0;
   right: 20%;
-  z-index: 2
+  z-index: 2;
   margin: 20px;
-  font-size:
+  font-size: 1.5rem;
 }
 .bem-container{
   width:100%;
@@ -137,7 +137,7 @@ header{
 .bem-container--narrow{ max-width:600px }
 .bem-grid { display: grid; gap: var(--bem-spacing-md) }
 .bem-btn{
-  display:inline-flex;
+  display:flex;
   align-items:center;
   justify-content:center;
   padding:var(--bem-spacing-sm) var(--bem-spacing-lg);
@@ -149,6 +149,7 @@ header{
   transition:all .2s ease;
   text-decoration:none;
   gap:var(--bem-spacing-sm);
+  margin:var(--bem-spacing-lg) 0;
 }
 .bem-btn:hover{ transform:translateY(-1px);box-shadow:var(--bem-shadow-md) }
 .bem-btn:active{ transform:translateY(0) }
@@ -402,7 +403,7 @@ header{
 
     width: 100%;
   }
-    bem-navbar__secundario{
+    .bem-navbar__secundario{
     position:fixed; top:0; 
     }
 .bem-logo{
@@ -411,8 +412,9 @@ header{
   left: 50%;
   z-index: 151px;
 }
-bem-navbar{
+.bem-navbar{
   display: flex;
+}
   .bem-container--narrow{ max-width:800px }
   .bem-grid--cols-2,.bem-grid--cols-3,.bem-grid--cols-4 { grid-template-columns: 1fr }
   .bem-navbar__menu{ display:none }
