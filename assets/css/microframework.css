@@ -84,6 +84,31 @@ header{
   z-index: 1001;
   width: 100px;
 }
+.container_icones{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.sobre-img{
+  position: absolute;
+  border-radius: 100px 0 0 0;
+  background-color: #334155;
+  width: 45%;
+  height: 300px;
+  z-index: 5px;
+}
+.sobre-descricao{
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction:column;
+  width : 60%;
+  border: #2dd4bf 2px solid;
+  height: 300px;
+  color: var(--bem-light);
+}
 .bem-hero{
   /*relativo para c ontrolar a posição absoluta dos filhos  */
   position: relative;
