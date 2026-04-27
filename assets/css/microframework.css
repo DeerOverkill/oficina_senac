@@ -60,7 +60,7 @@ body{
   font-family:var(--bem-font-base);
   line-height:1.5;
   color:var(--bem-text);
-  background:var(--bem-bg);
+  background:var(--bem-light);
   transition:background .25s, color .25s;
   cursor: url(../imagens/cursor/cursor.svg), auto;
 }
@@ -68,6 +68,10 @@ a{
   cursor: url(../imagens/cursor/cursor-ancora.svg), auto;
   text-decoration: none;
   color: var(--bem-secondary);
+}
+p{
+  color : var(--bem-secondary);
+  padding: 10px 100px;
 }
 header{
   display: flex;
@@ -97,6 +101,7 @@ header{
   width: 45%;
   height: 300px;
   z-index: 5px;
+  background-color: var(--bem-text-muted);
 }
 .sobre-descricao{
   position: absolute;
@@ -108,6 +113,7 @@ header{
   border: #2dd4bf 2px solid;
   height: 300px;
   color: var(--bem-light);
+  background-color: var(--bem-bg);
 }
 .bem-hero{
   /*relativo para c ontrolar a posição absoluta dos filhos  */
@@ -157,7 +163,7 @@ header{
   justify-content: center;
   margin: 20px;
   font-size: 1.5rem;
-  color: var(--bem-secondary);
+  color: var(--bem-primary);
 }
 .bem-container{
   width:100%;
