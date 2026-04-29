@@ -2,6 +2,7 @@ function initComparisons() {
   var x, i;
   /* Find all elements with an "overlay" class: */
   x = document.getElementsByClassName("img-comp-overlay");
+  console.log(x)
   for (i = 0; i < x.length; i++) {
     /* Once for each "overlay" element:
     pass the "overlay" element as a parameter when executing the compareImages function: */
