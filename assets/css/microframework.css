@@ -554,3 +554,14 @@ header{
 .img-comp-overlay{
   border-right: solid 2px var(--bem-tertiary);
 }
+.revelar-ao-rolar {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  will-change: opacity, transform;
+}
+
+.revelar-ao-rolar.ativo {
+  opacity: 1;
+  transform: translateY(0);
+}

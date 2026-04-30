@@ -77,3 +77,24 @@ function initComparisons() {
 }
 initComparisons();
 
+// Observador para Animações ao Rolar a Página
+document.addEventListener('DOMContentLoaded', () => {
+  const observadorDeScroll = new IntersectionObserver((entradas, observador) => {
+    entradas.forEach(entrada => {
+      if (entrada.isIntersecting) {
+        entrada.target.classList.add('ativo');
+        // Opcional: Descomente a linha abaixo se quiser que a animação ocorra apenas uma vez
+        // observador.unobserve(entrada.target);
+      } else {
+        // Remove a classe para repetir a animação se rolar para cima (efeito contínuo)
+        entrada.target.classList.remove('ativo');
+      }
+    });
+  }, {
+    root: null,
+    threshold: 0.15 // Dispara quando 15% do elemento está visível
+  });
+
+  const elementosParaRevelar = document.querySelectorAll('.revelar-ao-rolar');
+  elementosParaRevelar.forEach(el => observadorDeScroll.observe(el));
+});
