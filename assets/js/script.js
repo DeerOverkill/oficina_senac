@@ -2,24 +2,23 @@ function initComparisons() {
   var x, i;
   /* Find all elements with an "overlay" class: */
   x = document.getElementsByClassName("img-comp-overlay");
-  console.log(x)
   for (i = 0; i < x.length; i++) {
     /* Once for each "overlay" element:
     pass the "overlay" element as a parameter when executing the compareImages function: */
     compareImages(x[i]);
   }
-  function compareImages(img) {
-    var slider, img, clicked = 0, w, h;
+  function compareImages(imgOverlay) {
+    var slider, clicked = 0, w, h;
     /* Get the width and height of the img element */
-    w = img.offsetWidth;
-    h = img.offsetHeight;
+    w = imgOverlay.offsetWidth;
+    h = imgOverlay.offsetHeight;
     /* Set the width of the img element to 50%: */
-    img.style.width = (w / 2) + "px";
+    imgOverlay.style.width = (w / 2) + "px";
     /* Create slider: */
     slider = document.createElement("DIV");
     slider.setAttribute("class", "img-comp-slider");
     /* Insert slider */
-    img.parentElement.insertBefore(slider, img);
+    imgOverlay.parentElement.insertBefore(slider, imgOverlay);
     /* Position the slider in the middle: */
     slider.style.top = (h / 2) - (slider.offsetHeight / 2) + "px";
     slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
@@ -43,6 +42,8 @@ function initComparisons() {
     function slideFinish() {
       /* The slider is no longer clicked: */
       clicked = 0;
+      window.removeEventListener("mousemove", slideMove);
+      window.removeEventListener("touchmove", slideMove);
     }
     function slideMove(e) {
       var pos;
@@ -60,7 +61,7 @@ function initComparisons() {
       var a, x = 0;
       e = (e.changedTouches) ? e.changedTouches[0] : e;
       /* Get the x positions of the image: */
-      a = img.getBoundingClientRect();
+      a = imgOverlay.getBoundingClientRect();
       /* Calculate the cursor's x coordinate, relative to the image: */
       x = e.pageX - a.left;
       /* Consider any page scrolling: */
@@ -69,13 +70,13 @@ function initComparisons() {
     }
     function slide(x) {
       /* Resize the image: */
-      img.style.width = x + "px";
+      imgOverlay.style.width = x + "px";
       /* Position the slider: */
-      slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
+      slider.style.left = imgOverlay.offsetWidth - (slider.offsetWidth / 2) + "px";
     }
   }
 }
-initComparisons();
+window.addEventListener('load', initComparisons);
 
 // Observador para Animações ao Rolar a Página
 document.addEventListener('DOMContentLoaded', () => {

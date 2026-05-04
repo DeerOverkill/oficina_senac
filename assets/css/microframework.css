@@ -273,7 +273,7 @@ header{
 @keyframes bem-scale-up{ from{ opacity:0;transform:scale(0.95)}to{ opacity:1;transform:scale(1)}}
 .bem-animate-fade-in{ animation:bem-fade-in 0.3s ease forwards}
 .bem-animate-slide-up{ animation:bem-slide-up 0.4s ease forwards}
-.bem-grid-auto{ display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:var(--bem-spacing-md)}
+.bem-grid-auto{ display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:var(--bem-spacing-md)}
 .bem-flex-1{ flex:1}
 .bem-flex-wrap{ flex-wrap:wrap}
 .bem-h-screen{ height:100vh}
@@ -498,6 +498,9 @@ header{
 .img-comp-container {
   position: relative;
   height: 200px; /*should be the same height as the images*/
+  margin: 0 auto;
+  max-width: 100%;
+  width: 300px;
 }
 
 .img-comp-img {
@@ -529,13 +532,13 @@ header{
 /* keyframes */
 @keyframes esquerda-direita{
   0% { 
-    left: 111px; 
+    transform: translateX(0); 
   }
   50% { 
-    left: 108px; 
+    transform: translateX(-3px); 
   }
   100% { 
-    left: 111px; 
+    transform: translateX(0); 
   }
 }
 
@@ -564,4 +567,64 @@ header{
 .revelar-ao-rolar.ativo {
   opacity: 1;
   transform: translateY(0);
+}
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.columns {
+  float: left;
+  width: 33.3%;
+  padding: 8px;
+}
+
+.price {
+  list-style-type: none;
+  border: 1px solid #eee;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.price:hover {
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+
+.price .header {
+  background-color: #111;
+  color: white;
+  font-size: 25px;
+}
+
+.price li {
+  border-bottom: 1px solid #eee;
+  padding: 20px;
+  text-align: center;
+}
+
+.price .grey {
+  background-color: #eee;
+  font-size: 20px;
+}
+
+.button {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+@media only screen and (max-width: 600px) {
+  .columns {
+    width: 100%;
+  }
 }
