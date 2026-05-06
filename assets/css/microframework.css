@@ -362,7 +362,7 @@ header{
   padding:var(--bem-spacing-md) var(--bem-spacing-lg);
   box-shadow:var(--bem-shadow-sm);
   transition:background .25s;
-  position:sticky; top: 70px; z-index:10;
+  position:sticky; top: 70px; z-index:90;
   background-color: var(--bem-primary);
   color: var(--bem-secondary);
 }
@@ -568,14 +568,7 @@ header{
   opacity: 1;
   transform: translateY(0);
 }
-<!DOCTYPE html>
-<html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-* {
-  box-sizing: border-box;
-}
+
 
 .columns {
   float: left;
@@ -627,4 +620,66 @@ header{
   .columns {
     width: 100%;
   }
+}
+
+/* --- CARROSSEL INFINITO (EQUIPE) --- */
+.bem-carousel {
+  overflow: hidden;
+  width: 100%;
+  padding: var(--bem-spacing-md) 0;
+  position: relative;
+}
+
+.bem-carousel__track {
+  display: flex;
+  width: calc(300px * 8 + 2rem * 8); /* 8 cards total */
+  gap: 2rem;
+  animation: scroll-carousel 20s linear infinite;
+}
+
+.bem-carousel__track:hover {
+  animation-play-state: paused;
+}
+
+.bem-carousel__card {
+  width: 300px;
+  flex-shrink: 0;
+  text-align: center;
+  border: 1px solid var(--bem-border-light);
+}
+
+.bem-carousel__card img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  border-top-left-radius: var(--bem-radius-md);
+  border-top-right-radius: var(--bem-radius-md);
+}
+
+.bem-carousel__info {
+  padding: var(--bem-spacing-md);
+}
+
+.bem-carousel__info h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: var(--bem-text-primary);
+}
+
+.bem-carousel__info span {
+  display: block;
+  font-size: 1rem;
+  color: var(--bem-tertiary); /* Laranja */
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+@keyframes scroll-carousel {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-300px * 4 - 2rem * 4)); }
+}
+
+#footer-container{
+  width: 100%;
+  background-color: var(--bem-bg);
 }
