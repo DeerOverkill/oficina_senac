@@ -682,4 +682,14 @@ header{
 #footer-container{
   width: 100%;
   background-color: var(--bem-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.bem-navbar__item{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
 }
