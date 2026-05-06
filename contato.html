@@ -3,44 +3,294 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oficina Senac - Equipe</title>
-    <meta name="description" content="Oficina de Desenvolvimento de sites para carros">
-    <meta name="keywords" content="keyword1, keyword2">
-    <meta property="og:title" content="Page Title">
-    <meta property="og:description" content="Page description">
+    <title>Oficina Senac — Contato</title>
+    <meta name="description" content="Entre em contato com a Oficina Senac. Agende seu serviço, tire dúvidas ou solicite um orçamento gratuito.">
+    <meta name="keywords" content="oficina mecânica, contato, orçamento, agendamento, Senac">
+    <meta property="og:title" content="Oficina Senac — Contato">
+    <meta property="og:description" content="Agende seu serviço ou solicite um orçamento gratuito.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.example.com">
-    <meta property="og:image" content="https://www.example.com/image.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Page Title">
-    <meta name="twitter:description" content="Page description">
-    <meta name="twitter:image" content="https://www.example.com/image.jpg">
 
-    <link rel="preload" href="assets/css/microframework.css" as="style"
-            onload="this.rel='stylesheet'">
+    <link rel="preload" href="assets/css/microframework.css" as="style" onload="this.rel='stylesheet'">
     <noscript>
         <link rel="stylesheet" href="assets/css/microframework.css">
     </noscript>
 </head>
 <body class="bem-cursor">
+
     <div id="header-global"></div>
+
     <main>
         <div id="nav-secundaria-global"></div>
-<section class="bem-container" id="servicos">
-            <h2 class="bem-titulo-h2">Nossa equipe</h2>
-            <div class="bem-grid-auto">
+
+        <!-- ===== HERO MINI ===== -->
+        <section class="bem-contato-hero">
+            <div class="bem-container">
+                <h1>Entre em Contato</h1>
+                <p>Agende seu serviço ou solicite um orçamento gratuito — sem compromisso</p>
+            </div>
+        </section>
+
+        <!-- ===== GRID: FORMULÁRIO + INFORMAÇÕES ===== -->
+        <section class="bem-container bem-contato-grid revelar-ao-rolar">
+
+            <!-- COLUNA 1: Formulário -->
+            <div class="bem-contato-form-wrapper">
+                <h2>Envie sua mensagem</h2>
+                <form class="bem-form" id="form-contato" novalidate>
+
+                    <div class="bem-form__group">
+                        <label class="bem-form__label bem-form__label--required" for="input-nome">Nome completo</label>
+                        <input
+                            id="input-nome"
+                            type="text"
+                            class="bem-form__input"
+                            placeholder="Ex: João da Silva"
+                            autocomplete="name">
+                        <span class="bem-form__error" id="erro-nome"></span>
+                    </div>
+
+                    <div class="bem-form__group">
+                        <label class="bem-form__label bem-form__label--required" for="input-email">E-mail</label>
+                        <input
+                            id="input-email"
+                            type="email"
+                            class="bem-form__input"
+                            placeholder="seuemail@exemplo.com"
+                            autocomplete="email">
+                        <span class="bem-form__error" id="erro-email"></span>
+                    </div>
+
+                    <div class="bem-form__group">
+                        <label class="bem-form__label" for="input-telefone">Telefone / WhatsApp</label>
+                        <input
+                            id="input-telefone"
+                            type="tel"
+                            class="bem-form__input"
+                            placeholder="(11) 9 9999-8888"
+                            autocomplete="tel">
+                    </div>
+
+                    <div class="bem-form__group">
+                        <label class="bem-form__label bem-form__label--required" for="input-servico">Tipo de serviço</label>
+                        <select id="input-servico" class="bem-form__input bem-form__select">
+                            <option value="" disabled selected>Selecione o serviço desejado</option>
+                            <option value="revisao">Revisão Geral</option>
+                            <option value="oleo">Troca de Óleo</option>
+                            <option value="freios">Freios e Suspensão</option>
+                            <option value="pintura">Pintura Automotiva</option>
+                            <option value="funilaria">Funilaria</option>
+                            <option value="eletrica">Elétrica Automotiva</option>
+                            <option value="vidros">Vidros e Faróis</option>
+                            <option value="motor">Motor e Transmissão</option>
+                            <option value="outro">Outro serviço</option>
+                        </select>
+                        <span class="bem-form__error" id="erro-servico"></span>
+                    </div>
+
+                    <div class="bem-form__group">
+                        <label class="bem-form__label bem-form__label--required" for="input-mensagem">Mensagem</label>
+                        <textarea
+                            id="input-mensagem"
+                            class="bem-form__textarea"
+                            rows="5"
+                            placeholder="Descreva o problema ou serviço que precisa. Quanto mais detalhes, melhor!"></textarea>
+                        <span class="bem-form__error" id="erro-mensagem"></span>
+                    </div>
+
+                    <button type="submit" class="bem-btn bem-btn--primary bem-btn--block" id="btn-enviar">
+                        Enviar Mensagem &rarr;
+                    </button>
+
+                    <div class="bem-alert bem-alert--success bem-contato__sucesso" id="msg-sucesso" role="alert">
+                        <span class="bem-alert__icon">✅</span>
+                        <div class="bem-alert__content">
+                            <p class="bem-alert__title">Mensagem enviada com sucesso!</p>
+                            <p class="bem-alert__message">Nossa equipe entrará em contato em até 24 horas.</p>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+
+            <!-- COLUNA 2: Informações de contato -->
+            <div class="bem-contato-info">
+
+                <div class="bem-info-card">
+                    <span class="bem-info-card__icone">📍</span>
+                    <div class="bem-info-card__corpo">
+                        <p class="bem-info-card__titulo">Endereço</p>
+                        <p class="bem-info-card__valor">Rua das Oficinas, 1200<br>Bairro Centro — São Paulo, SP<br>CEP 01310-100</p>
+                    </div>
+                </div>
+
+                <div class="bem-info-card">
+                    <span class="bem-info-card__icone">📞</span>
+                    <div class="bem-info-card__corpo">
+                        <p class="bem-info-card__titulo">Telefone / WhatsApp</p>
+                        <p class="bem-info-card__valor">
+                            <a href="tel:+551199998888" style="color: inherit;">(11) 9 9999-8888</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bem-info-card">
+                    <span class="bem-info-card__icone">✉️</span>
+                    <div class="bem-info-card__corpo">
+                        <p class="bem-info-card__titulo">E-mail</p>
+                        <p class="bem-info-card__valor">
+                            <a href="mailto:contato@oficina.com" style="color: inherit;">contato@oficina.com</a>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bem-info-card">
+                    <span class="bem-info-card__icone">🕐</span>
+                    <div class="bem-info-card__corpo">
+                        <p class="bem-info-card__titulo">Horário de Atendimento</p>
+                        <p class="bem-info-card__valor">
+                            Segunda a Sexta: 8h às 18h<br>
+                            Sábado: 8h às 13h<br>
+                            Domingo: Fechado
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bem-contato-sociais">
+                    <p class="bem-contato-sociais__titulo">Nossas redes sociais</p>
+                    <div class="bem-contato-sociais__links">
+                        <a href="#" class="bem-navbar__link" aria-label="Facebook">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 12.05C19.9813 10.5255 19.5273 9.03809 18.6915 7.76295C17.8557 6.48781 16.673 5.47804 15.2826 4.85257C13.8921 4.2271 12.3519 4.01198 10.8433 4.23253C9.33473 4.45309 7.92057 5.10013 6.7674 6.09748C5.61422 7.09482 4.77005 8.40092 4.3343 9.86195C3.89856 11.323 3.88938 12.8781 4.30786 14.3442C4.72634 15.8103 5.55504 17.1262 6.69637 18.1371C7.83769 19.148 9.24412 19.8117 10.75 20.05V14.38H8.75001V12.05H10.75V10.28C10.7037 9.86846 10.7483 9.45175 10.8807 9.05931C11.0131 8.66687 11.23 8.30827 11.5161 8.00882C11.8022 7.70936 12.1505 7.47635 12.5365 7.32624C12.9225 7.17612 13.3368 7.11255 13.75 7.14003C14.3498 7.14824 14.9482 7.20173 15.54 7.30003V9.30003H14.54C14.3676 9.27828 14.1924 9.29556 14.0276 9.35059C13.8627 9.40562 13.7123 9.49699 13.5875 9.61795C13.4627 9.73891 13.3667 9.88637 13.3066 10.0494C13.2464 10.2125 13.2237 10.387 13.24 10.56V12.07H15.46L15.1 14.4H13.25V20C15.1399 19.7011 16.8601 18.7347 18.0985 17.2761C19.3369 15.8175 20.0115 13.9634 20 12.05Z" fill="#f2994a"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="bem-navbar__link" aria-label="Instagram">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" fill="#f2994a"/>
+                                <path d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z" fill="#f2994a"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z" fill="#f2994a"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="bem-navbar__link" aria-label="WhatsApp">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12C2 13.89 2.525 15.66 3.438 17.168L2.049 21.951L6.959 20.587C8.42 21.431 10.152 21.922 12 21.922C17.523 21.922 22 17.445 22 11.922C22 6.399 17.523 2 12 2ZM8.593 7.382C8.39 7.382 8.064 7.457 7.786 7.76C7.508 8.062 6.727 8.793 6.727 10.28C6.727 11.767 7.811 13.204 7.963 13.407C8.114 13.61 10.054 16.652 13.023 17.914C15.516 18.972 15.992 18.789 16.499 18.74C17.005 18.691 18.142 18.009 18.394 17.302C18.647 16.595 18.647 15.988 18.572 15.863C18.496 15.738 18.294 15.663 17.991 15.511C17.689 15.36 16.204 14.629 15.926 14.528C15.649 14.427 15.446 14.377 15.244 14.679C15.042 14.982 14.462 15.663 14.285 15.863C14.107 16.065 13.931 16.09 13.629 15.938C13.326 15.787 12.348 15.469 11.194 14.427C10.295 13.615 9.687 12.617 9.511 12.314C9.334 12.012 9.492 11.849 9.645 11.699C9.782 11.563 9.948 11.346 10.1 11.169C10.251 10.992 10.302 10.866 10.402 10.664C10.503 10.462 10.452 10.285 10.377 10.133C10.302 9.982 9.714 8.488 9.461 7.88C9.218 7.29 8.97 7.368 8.783 7.359C8.609 7.351 8.406 7.35 8.204 7.35L8.593 7.382Z" fill="#f2994a"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
 
             </div>
-            
-            
+        </section>
 
-            Section>
+        <!-- ===== MAPA ===== -->
+        <div class="bem-contato-mapa">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.197!2d-46.6543!3d-23.5644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMzJzUxLjgiUyA0NsKwMzknMTUuNSJX!5e0!3m2!1spt-BR!2sbr!4v1620000000000"
+                title="Localização da Oficina Senac"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen>
+            </iframe>
+        </div>
 
-
-<footer id="footer-container">
-     </footer>
     </main>
+
+    <footer id="footer-container"></footer>
+
     <script src="assets/js/navbar.js"></script>
     <script src="assets/js/script.js"></script>
+
+    <script>
+        // ===== VALIDAÇÃO DO FORMULÁRIO DE CONTATO =====
+        const form = document.getElementById('form-contato');
+
+        function mostrarErro(inputId, erroId, mensagem) {
+            const input = document.getElementById(inputId);
+            const erro = document.getElementById(erroId);
+            input.classList.add('bem-form__input--error');
+            input.classList.remove('bem-form__input--success');
+            erro.textContent = mensagem;
+            return false;
+        }
+
+        function limparErro(inputId, erroId) {
+            const input = document.getElementById(inputId);
+            const erro = document.getElementById(erroId);
+            input.classList.remove('bem-form__input--error');
+            input.classList.add('bem-form__input--success');
+            if (erro) erro.textContent = '';
+            return true;
+        }
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            let valido = true;
+
+            // Validar nome
+            const nome = document.getElementById('input-nome').value.trim();
+            if (nome.length < 3) {
+                mostrarErro('input-nome', 'erro-nome', 'Por favor, informe seu nome completo.');
+                valido = false;
+            } else {
+                limparErro('input-nome', 'erro-nome');
+            }
+
+            // Validar email
+            const email = document.getElementById('input-email').value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                mostrarErro('input-email', 'erro-email', 'Por favor, informe um e-mail válido.');
+                valido = false;
+            } else {
+                limparErro('input-email', 'erro-email');
+            }
+
+            // Validar serviço
+            const servico = document.getElementById('input-servico').value;
+            if (!servico) {
+                mostrarErro('input-servico', 'erro-servico', 'Por favor, selecione o tipo de serviço.');
+                valido = false;
+            } else {
+                limparErro('input-servico', 'erro-servico');
+            }
+
+            // Validar mensagem
+            const mensagem = document.getElementById('input-mensagem').value.trim();
+            if (mensagem.length < 10) {
+                mostrarErro('input-mensagem', 'erro-mensagem', 'Por favor, descreva sua solicitação (mínimo 10 caracteres).');
+                valido = false;
+            } else {
+                limparErro('input-mensagem', 'erro-mensagem');
+            }
+
+            if (valido) {
+                const btn = document.getElementById('btn-enviar');
+                btn.textContent = 'Enviando...';
+                btn.disabled = true;
+
+                // Simula envio (substituir por fetch real futuramente)
+                setTimeout(() => {
+                    document.getElementById('msg-sucesso').classList.add('visivel');
+                    form.reset();
+                    // Remove os estilos de sucesso dos inputs
+                    document.querySelectorAll('.bem-form__input--success').forEach(el => el.classList.remove('bem-form__input--success'));
+                    btn.textContent = 'Enviar Mensagem →';
+                    btn.disabled = false;
+                }, 1000);
+            }
+        });
+
+        // Validação em tempo real ao sair do campo
+        document.getElementById('input-nome').addEventListener('blur', function () {
+            this.value.trim().length >= 3
+                ? limparErro('input-nome', 'erro-nome')
+                : mostrarErro('input-nome', 'erro-nome', 'Por favor, informe seu nome completo.');
+        });
+        document.getElementById('input-email').addEventListener('blur', function () {
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.value.trim())
+                ? limparErro('input-email', 'erro-email')
+                : mostrarErro('input-email', 'erro-email', 'Por favor, informe um e-mail válido.');
+        });
+    </script>
+
 </body>
 </html>

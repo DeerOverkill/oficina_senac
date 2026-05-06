@@ -106,6 +106,10 @@ header{
   position: relative;
   height: 300px;
 }
+#servicos{
+  position: relative;
+  height: 50px auto;
+}
 .sobre-img{
   position: absolute;
   top: 70px;
@@ -494,6 +498,7 @@ header{
 
 #projetos{
   position: relative;
+  margin: 50px auto;
 }
 .img-comp-container {
   position: relative;
@@ -692,4 +697,187 @@ header{
   display: flex;
   justify-content: center;
   gap: 15px;
+}
+
+/* --- FAQ ACCORDION --- */
+.bem-faq {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bem-spacing-sm);
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: var(--bem-spacing-xl);
+}
+.bem-faq__item {
+  background: var(--bem-surface);
+  border-radius: var(--bem-radius-md);
+  border-left: 3px solid var(--bem-tertiary);
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+}
+.bem-faq__item:hover {
+  box-shadow: var(--bem-shadow-md);
+}
+.bem-faq__pergunta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--bem-spacing-md) var(--bem-spacing-lg);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--bem-text);
+  list-style: none;
+  user-select: none;
+  gap: var(--bem-spacing-md);
+}
+.bem-faq__pergunta::-webkit-details-marker { display: none; }
+.bem-faq__pergunta:hover { background: var(--bem-light); }
+.bem-faq__icone {
+  color: var(--bem-tertiary);
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+details[open] .bem-faq__icone { transform: rotate(45deg); }
+.bem-faq__resposta {
+  padding: 0 var(--bem-spacing-lg) var(--bem-spacing-md);
+  border-top: 1px solid var(--bem-border);
+}
+.bem-faq__resposta p {
+  padding: var(--bem-spacing-sm) 0 0;
+  color: var(--bem-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* --- PÁGINA DE CONTATO --- */
+.bem-contato-hero {
+  background: var(--bem-bg);
+  padding: 4rem 0 3rem;
+  text-align: center;
+  border-bottom: 3px solid var(--bem-tertiary);
+}
+.bem-contato-hero h1 {
+  color: var(--bem-secondary);
+  font-size: 2.5rem;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: var(--bem-spacing-sm);
+}
+.bem-contato-hero p {
+  color: var(--bem-text-muted);
+  padding: 0;
+  font-size: 1.1rem;
+}
+.bem-contato-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--bem-spacing-xl);
+  padding: 3rem var(--bem-spacing-md);
+  align-items: start;
+}
+.bem-contato-form-wrapper {
+  background: var(--bem-surface);
+  padding: var(--bem-spacing-xl);
+  border-radius: var(--bem-radius-lg);
+  box-shadow: var(--bem-shadow-lg);
+}
+.bem-contato-form-wrapper h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  color: var(--bem-text);
+  margin-bottom: var(--bem-spacing-lg);
+  padding-bottom: var(--bem-spacing-sm);
+  border-bottom: 2px solid var(--bem-tertiary);
+}
+.bem-contato-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--bem-spacing-md);
+  position: sticky;
+  top: 150px;
+}
+.bem-info-card {
+  background: var(--bem-bg);
+  border-left: 4px solid var(--bem-tertiary);
+  padding: var(--bem-spacing-md) var(--bem-spacing-lg);
+  border-radius: var(--bem-radius-md);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--bem-spacing-md);
+}
+.bem-info-card__icone {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.bem-info-card__corpo {}
+.bem-info-card__titulo {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--bem-tertiary);
+  margin-bottom: 4px;
+}
+.bem-info-card__valor {
+  color: var(--bem-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding: 0;
+}
+.bem-contato-sociais {
+  background: var(--bem-bg);
+  padding: var(--bem-spacing-md) var(--bem-spacing-lg);
+  border-radius: var(--bem-radius-md);
+  border: 1px solid var(--bem-border);
+}
+.bem-contato-sociais__titulo {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--bem-tertiary);
+  margin-bottom: var(--bem-spacing-sm);
+}
+.bem-contato-sociais__links {
+  display: flex;
+  gap: var(--bem-spacing-md);
+  align-items: center;
+}
+.bem-contato-mapa {
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+}
+.bem-contato-mapa iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: grayscale(30%) contrast(1.1);
+}
+.bem-contato__sucesso {
+  display: none;
+  margin-top: var(--bem-spacing-md);
+}
+.bem-contato__sucesso.visivel {
+  display: flex;
+  animation: bem-slide-up 0.4s ease forwards;
+}
+.bem-form__select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+@media (max-width: 768px) {
+  .bem-contato-grid { grid-template-columns: 1fr; }
+  .bem-contato-info { position: static; }
+  .bem-contato-hero h1 { font-size: 1.8rem; }
 }
