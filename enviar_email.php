@@ -34,7 +34,7 @@ try {
 
     //Recipients
     $mail->setFrom('from@example.com', 'Mailer');
-    $mail->addAddress('joe@example.net', 'Joe User');     //Add a recipient
+    $mail->addAddress('pintucabeludu@gmail.com', 'Joe User');     //Add a recipient
     // $mail->addAddress('ellen@example.com');               //Name is optional
     // $mail->addReplyTo('info@example.com', 'Information');
     // $mail->addCC('cc@example.com');
@@ -46,8 +46,10 @@ try {
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'Here is the subject';
-    $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
+    $mail->Subject = 'Email enviado do site senac';
+    $mail->Body    = ' A mensagem enviada é: <b> '  . $dados['mensagem'] . ' </b>'.
+    '<br> Enviada por: <b> ' . $dados['nome'] . ' </b> com o email: <b> ' . $dados['email'] .
+    ' </b> e telefone: <b> ' . $dados['telefone'] . ' </b>';
     $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
 
     $mail->send();
